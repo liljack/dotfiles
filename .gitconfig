@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	ci = commit
+        cia = commit --amend
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	df = diff
+	ds = diff --staged
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	cleanup = "!f() { git branch -r --merged | grep -v 'main' | sed 's/origin\\///' | xargs git branch -d; }; f"
